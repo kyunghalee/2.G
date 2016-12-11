@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>스마트모자</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="text/html; charset=UTF-8" />
+    <!-- Compiled and minified CSS -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="js/jquery.2.14.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</head>
+
+<body style="text-align: center;">
+    <div class="navbar-fixed" >
+        <nav class=""  >
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">스마트 모자</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a class="connect" href="javascript:;">블루투스 연결</a></li>
+                    <li><a class="setting" href="javascript:;">보호자 연락처 설정</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <a  style="background-color: #f6b9e0; margin-top: 36px; margin-bottom: 30px; width: 90%;" class="connect waves-effect waves-light btn-large">블루투스 연결</a>
+    <a  style="background-color: #f6b9e0; margin-bottom: 30px; width: 90%;" class="setting waves-effect waves-light btn-large">보호자 연락처 설정</a>
+
+    <h4 id="out">외원 반지름 현재<span>150cm</span></h4>
+    <a data-value="80" style="width: 40%;" class="finsish waves-effect waves-light btn-large outBtn">80cm</a>
+    <a data-value="150" style="width: 40%;" class="finsish waves-effect waves-light btn-large outBtn">150cm</a>
+    <div style="margin:16px;"></div>
+    <a data-value="200" style="width: 40%;" class="finsish waves-effect waves-light btn-large outBtn">200cm</a>
+    <a  data-value="250" style="width: 40%;" class="finsish waves-effect waves-light btn-large outBtn">250cm</a>
+    <div style="margin:16px;"></div>
+    <h4 id="in">내원 반지름 현재<span>150cm</span></h4>
+    <div style="margin:16px;"></div>
+    <a data-value="0" style="width: 40%;" class="finsish waves-effect waves-light btn-large inBtn">초기화 0cm</a>
+    <a data-value="20" style="width: 40%;" class="finsish waves-effect waves-light btn-large inBtn">20cm</a>
+    <div style="margin:16px;"></div>
+    <a data-value="40" style="width: 40%;" class="finsish waves-effect waves-light btn-large inBtn">40cm</a>
+    <a data-value="100" style="width: 40%;" class="finsish waves-effect waves-light btn-large inBtn">100cm</a>
+    <a style="width: 80%; margin:16px;" class="gps waves-effect waves-light btn-large inBtn">gps</a>
+
+    <img src="https://cdn2.iconfinder.com/data/icons/thesquid-ink-40-free-flat-icon-pack/64/cap-512.png" width="40%;" style="margin-top: 30px;">
+    <a id="finish" style=" display:none;margin-top: 10px; width: 90%;" class="gray finsish waves-effect waves-light btn-large">앱종료</a>
+</body>
+<script>
+$(".button-collapse").sideNav();
+$(".connect").on('click', function() {
+    if (window.Android) {
+        Android.connect();
+    }
+});
+
+$("#finish").on('click', function() {
+    if (window.Android) {
+        Android.finish();
+    }
+});
+
+
+$(".setting").on('click', function() {
+    if (window.Android) {
+        Android.setting();
+    }
+});
+
+
+/**
+ *  바깎쪽 범위 설정
+ */
+$(".outBtn").on('click', function() {
+    if (window.Android) {
+        var distance = $(this).attr('data-value');
+        $("#out span").text(distance + "cm");
+        Materialize.toast("범위를 설정했습니다.", 4000) // 4000 is the duration of the toast
+        Android.outDistance(distance);
+    }
+});
+
+/**
+ *     안쪽범위설정
+ */
+$(".inBtn").on('click', function() {
+    if (window.Android) {
+        var distance = $(this).attr('data-value');
+        $("#in span").text(distance + "cm");
+        Materialize.toast("범위를 설정했습니다.", 4000) // 4000 is the duration of the toast
+        Android.inDistance(distance);
+    }
+});
+
+/**
+ *     안쪽범위설정
+ */
+$(".gps").on('click', function() {
+    if (window.Android) {
+          window.startGps();
+    }
+});
+
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+$('select').material_select();  
+</script>
+
+</html>
