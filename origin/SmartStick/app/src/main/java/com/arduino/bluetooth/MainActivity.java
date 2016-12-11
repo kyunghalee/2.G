@@ -387,6 +387,40 @@ public class MainActivity extends BaseActivity {
 
         }
 
+        public void run() {
+            // 토스트 메세지를 띄운다.
+            showToast("아두이노에 연결되었습니다.");
+            // InputStream 으로부터 입력을 읽어들입니다.
+            String msg = "";
+            while (true) {
+
+                try {
+                    byte[] buffer = new byte[4096];
+                    // Read from the InputStream
+                    //mmInStream.read(buffer);
+                    //	InputStreamReader isr = new InputStreamReader(mmInStream);
+                    mmInStream.read(buffer);
+                    msg += new String(buffer).trim();
+                    //Log.i(DEBUG_TAG, "수신된 메세지->" + msg);
+                    if (msg.contains("tilt;")) {
+                        final String sendData = msg.trim();
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                sendSms();
+                                //mWebView.loadUrl("javascript:sendData('" + sendData + "');");
+
+                            }
+                        });
+                        Log.i(DEBUG_TAG, "수신된 메세지->" + sendData);
+                        msg = "";
+                    }
+
+                } catch (IOException e) {
+                    break;
+                }
+            }
+        }
 
         /**
          * outputstream의 write를 통해 메세지 내용을 쓴다.
@@ -411,6 +445,16 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    private void sendSms(){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        String tel = prefs.getString("tel", "");
+        if(TextUtils.isEmpty(tel)){
+            Toast.makeText(mContext, "연락처가 설정되지 않았습니다", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        SmsManager mSmsManager = SmsManager.getDefault();
+        mSmsManager.sendTextMessage(tel, null, "사용자가 넘어졌습니다.", null, null);
+    }
 
     /**
      * 서버 연결 쓰레드로 rfcomm 채널을 통해 서버 소캣을 만들어 준다.
