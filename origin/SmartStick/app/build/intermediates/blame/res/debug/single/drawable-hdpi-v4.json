@@ -14,5 +14,13 @@
     {
         "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\helmet.png",
         "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\drawable-hdpi\\helmet.png"
+    },
+    {
+        "merged": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\helmet.png",
+        "source": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\src\\main\\res\\drawable-hdpi\\helmet.png"
+    },
+    {
+        "merged": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\app_icon.png",
+        "source": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\src\\main\\res\\drawable-hdpi\\app_icon.png"
     }
 ]

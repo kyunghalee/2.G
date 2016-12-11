@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>스마트모자</title>
+    <title>CD 모자</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -18,11 +18,10 @@
     <div class="navbar-fixed" >
         <nav class=""  >
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">스마트 모자</a>
+                <a href="#!" class="brand-logo">CD 모자</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a class="connect" href="javascript:;">블루투스 연결</a></li>
-                    <li><a class="setting" href="javascript:;">보호자 연락처 설정</a></li>
                 </ul>
             </div>
         </nav>
@@ -45,9 +44,7 @@
     <div style="margin:16px;"></div>
     <a data-value="40" style="width: 40%;" class="finsish waves-effect waves-light btn-large inBtn">40cm</a>
     <a data-value="100" style="width: 40%;" class="finsish waves-effect waves-light btn-large inBtn">100cm</a>
-    <a style="width: 80%; margin:16px;" class="gps waves-effect waves-light btn-large inBtn">gps</a>
 
-    <img src="https://cdn2.iconfinder.com/data/icons/thesquid-ink-40-free-flat-icon-pack/64/cap-512.png" width="40%;" style="margin-top: 30px;">
     <a id="finish" style=" display:none;margin-top: 10px; width: 90%;" class="gray finsish waves-effect waves-light btn-large">앱종료</a>
 </body>
 <script>
@@ -61,13 +58,6 @@ $(".connect").on('click', function() {
 $("#finish").on('click', function() {
     if (window.Android) {
         Android.finish();
-    }
-});
-
-
-$(".setting").on('click', function() {
-    if (window.Android) {
-        Android.setting();
     }
 });
 
@@ -99,11 +89,6 @@ $(".inBtn").on('click', function() {
 /**
  *     안쪽범위설정
  */
-$(".gps").on('click', function() {
-    if (window.Android) {
-          window.startGps();
-    }
-});
 
 
   $(document).ready(function() {

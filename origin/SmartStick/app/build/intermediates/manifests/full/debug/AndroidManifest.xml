@@ -18,11 +18,11 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="CD 모자" >
         <activity
             android:name="com.arduino.bluetooth.MainActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:label="@string/app_name"
+            android:label="CD 모자"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

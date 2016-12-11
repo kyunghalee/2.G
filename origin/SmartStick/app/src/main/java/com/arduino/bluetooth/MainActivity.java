@@ -126,6 +126,8 @@ public class MainActivity extends BaseActivity {
         mWebview.loadUrl("file:///android_asset/index.html");
 
 
+
+
         mWebview.setWebViewClient(new myWebClient());
         mWebview.addJavascriptInterface(new WebViewInterface(), "Android"); //JavascriptInterface 객체화
     }
@@ -167,16 +169,6 @@ public class MainActivity extends BaseActivity {
             startActivityForResult(intent, SEARCH_DEVICE);
         }
 
-        @JavascriptInterface
-        public void startGps() {
-            MainActivity.this.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                   // gps start
-
-                }
-            });
-        }
 
 
         @JavascriptInterface
@@ -418,6 +410,7 @@ public class MainActivity extends BaseActivity {
             }
         }
     }
+
 
     /**
      * 서버 연결 쓰레드로 rfcomm 채널을 통해 서버 소캣을 만들어 준다.

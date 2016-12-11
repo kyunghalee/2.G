@@ -1,23 +1,27 @@
 [
     {
-        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_name.xml",
-        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\device_name.xml"
+        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_title.xml",
+        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\custom_title.xml"
     },
     {
-        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message.xml",
-        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\message.xml"
+        "merged": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message.xml",
+        "source": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\src\\main\\res\\layout\\message.xml"
     },
     {
         "merged": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bluetooth_device.xml",
         "source": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\src\\main\\res\\layout\\activity_bluetooth_device.xml"
     },
     {
-        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_name.xml",
+        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\device_name.xml"
     },
     {
-        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_title.xml",
-        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\custom_title.xml"
+        "merged": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_name.xml",
+        "source": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\src\\main\\res\\layout\\device_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_title.xml",
@@ -28,6 +32,10 @@
         "source": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\src\\main\\res\\layout\\device_name.xml"
     },
     {
+        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bluetooth_device.xml",
+        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\activity_bluetooth_device.xml"
+    },
+    {
         "merged": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message.xml",
         "source": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\src\\main\\res\\layout\\message.xml"
     },
@@ -36,15 +44,31 @@
         "source": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_list.xml",
-        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\device_list.xml"
+        "merged": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bluetooth_device.xml",
+        "source": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\src\\main\\res\\layout\\activity_bluetooth_device.xml"
+    },
+    {
+        "merged": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_title.xml",
+        "source": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\src\\main\\res\\layout\\custom_title.xml"
+    },
+    {
+        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message.xml",
+        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\message.xml"
     },
     {
         "merged": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_list.xml",
         "source": "C:\\Users\\samsung\\Desktop\\miyou\\origin\\SmartStick\\app\\src\\main\\res\\layout\\device_list.xml"
     },
     {
-        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bluetooth_device.xml",
-        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\activity_bluetooth_device.xml"
+        "merged": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_list.xml",
+        "source": "C:\\Users\\samsung\\Desktop\\2.G\\origin\\SmartStick\\app\\src\\main\\res\\layout\\device_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_list.xml",
+        "source": "C:\\Users\\ddononi\\android_workspace\\SmartStick\\app\\src\\main\\res\\layout\\device_list.xml"
     }
 ]
