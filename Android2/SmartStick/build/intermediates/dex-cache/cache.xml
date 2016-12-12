@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.4.0_1737c2318626237b37fedd33ac359c3f3546c05a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_dd8c4a85caaf6a9c16b635fe444a6ef643a98fdd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\samsung\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0_52e737bd4dbd4399a5002cf96510fe009852621d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\libs\AndroidMultiBluetooth.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ca061e8da2f45a6687e921d3a0a111ffd1755cb5">
+        <dex dex="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\pre-dexed\debug\AndroidMultiBluetooth_b2be72f62323b30e2cecf280d6710a4f5f68ff72.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-8.4.0_085a89cf1c539432842efa1947376d062d378c17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0_f5cb171a46a69e8fb01193fe50690616365f2b68.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Users\samsung\Desktop\last\merge1203\SmartStick\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.0_8f9bbb0191e6986cd5041061314b6ffdc6f651d5.jar" />
+    </item>
+
+</items>
