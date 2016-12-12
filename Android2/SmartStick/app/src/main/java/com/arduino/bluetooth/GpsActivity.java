@@ -41,16 +41,21 @@ import java.util.Locale;
 /**
  * Created by samsung on 2016-11-16.
  */
-public class GpsActivity extends Activity implements LocationListener, View.OnClickListener {
+public class GpsActivity extends Activity implements LocationListener, View.OnClickListener{
 
     TextView textView3;
 
+    String dbName = "st_file.db";
+    int dbVersion = 3;
+    private DBManager helper;
+    private SQLiteDatabase db;
+    String tag = "SQLite"; // Log의 tag 로 사용
+    String tableName = "student"; // DB의 table 명
 
     // Button bSelect;
     TextView tv;   // 결과창
 
-    Button button;
-    boolean init;
+
 
     GoogleMap googleMap;
     MapFragment fragment;
@@ -73,11 +78,27 @@ public class GpsActivity extends Activity implements LocationListener, View.OnCl
         textView3 = (TextView)findViewById(R.id.textView3);
         tv      = (TextView)findViewById(R.id.textView4);
 
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(this);
-        init = false;
 
 
+        helper = new DBManager(
+                this,  // 현재 화면의 제어권자
+                dbName,  // 데이터베이스 이름
+                null, // 커서팩토리 - null 이면 표준 커서가 사용됨
+                dbVersion);  // 데이터베이스 버전
+
+        try {
+            db = helper.getWritableDatabase();
+        } catch (SQLiteException e) {
+            e.printStackTrace();
+            Log.e(tag, "데이터 베이스를 열수 없음");
+            finish();
+        }
+
+        insert ("대한민국 서울특별시 동작구 만양로8길", 250, 20);
+        insert ("대한민국 서울특별시 동작구 노량진1동", 150, 40);
+        insert ("대한민국 서울특별시 동작구 노량진동", 200, 100);
+        insert ("대한민국 경기도 수원시 원천동", 250, 20);
+        insert ("대한민국 경기도 수원시 이의동", 150, 40);
 
 
     }  // end of onCreate
@@ -89,9 +110,8 @@ public class GpsActivity extends Activity implements LocationListener, View.OnCl
         values.put("address", address);
         values.put("outradius", outradius);
         values.put("innerradius", innerradius);
-
+        long result = db.insert(tableName, null, values);
     }
-
 
 
     @Override
@@ -172,7 +192,22 @@ public class GpsActivity extends Activity implements LocationListener, View.OnCl
 
         textView3.setText(getAddress(lat, lng));
 
+        Cursor c = db.query(tableName, null, null, null, null, null, null);
+        while(c.moveToNext()) {
+            int _id = c.getInt(0);
+            String address = c.getString(1);
+            int outradius = c.getInt(2);
+            int innerradius = c.getInt(3);
 
+            String re = getAddress2(lat, lng);
+
+            if (re.equals(address)){
+                Log.d(tag,"_id:"+_id+", address: "+address
+                        +", outradius: "+outradius+", innerradius: "+innerradius);
+                tv.setText("\n" + "    address: " + address + "\n"
+                        + "    outradius: " + outradius + "  ,  innerradius: " + innerradius);
+            }
+        }
 
         if(marker == null){
             MarkerOptions options = new MarkerOptions();
@@ -203,10 +238,6 @@ public class GpsActivity extends Activity implements LocationListener, View.OnCl
     public void onProviderDisabled(String provider) {
 
     }
-
-
-
-
 
 
 }
