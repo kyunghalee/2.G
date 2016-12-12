@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ddononi/android_workspace/SmartStick/app/libs/AndroidMultiBluetooth.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ca061e8da2f45a6687e921d3a0a111ffd1755cb5">
+        <dex dex="/Users/ddononi/android_workspace/SmartStick/app/build/intermediates/pre-dexed/debug/AndroidMultiBluetooth_aeacbc98505ba5ef5cc96dfe156c4cdfa1ddb22e.jar" />
+    </item>
+    <item
+        jar="/Users/ddononi/android_workspace/SmartStick/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1d8e9c98c7d6b56764b91eb1e093003be2615c25">
+        <dex dex="/Users/ddononi/android_workspace/SmartStick/app/build/intermediates/pre-dexed/debug/instant-run_ca84cf903c8c4f63d44445b2a28325efae37e370.jar" />
+    </item>
+    <item
+        jar="/Users/ddononi/android_workspace/SmartStick/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="56e73662de6ec5c7763c1d86fa2356b438c135ba">
+        <dex dex="/Users/ddononi/android_workspace/SmartStick/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_086d41f2006fa8321cafd9050f2eefc64cd86dfa.jar" />
+    </item>
+
+</items>
