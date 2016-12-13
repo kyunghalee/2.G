@@ -41,7 +41,7 @@ import java.util.Locale;
 /**
  * Created by samsung on 2016-11-16.
  */
-public class GpsActivity extends Activity implements LocationListener, TextToSpeech.OnInitListener, View.OnClickListener {
+public class GpsActivity extends Activity implements LocationListener, TextToSpeech.OnInitListener, View.OnClickListener, SensorEventListener{
 
     TextView textView3;
 
@@ -65,6 +65,22 @@ public class GpsActivity extends Activity implements LocationListener, TextToSpe
     LocationManager lm;
     Marker marker;
 
+    private  long lastTime;
+    private float speed;
+    private float lastX;
+    private float lastY;
+    private float lastZ;
+    private float x, y, z;
+
+    private static  final  int SHAKE_THRESHOLD = 950;
+    private static  final  int DATA_X = SensorManager.DATA_X;
+    private static  final  int DATA_Y = SensorManager.DATA_Y;
+    private static  final  int DATA_Z = SensorManager.DATA_Z;
+
+
+    private SensorManager sensorManager;
+    private Sensor accelerormeterSensor;
+
 
 
     @Override
@@ -85,6 +101,8 @@ public class GpsActivity extends Activity implements LocationListener, TextToSpe
         init = false;
         tts = new TextToSpeech(this, this);
 
+        sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        accelerormeterSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         helper = new DBManager(
                 this,  // 현재 화면의 제어권자
@@ -118,6 +136,21 @@ public class GpsActivity extends Activity implements LocationListener, TextToSpe
         values.put("innerradius", innerradius);
         long result = db.insert(tableName, null, values);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(accelerormeterSensor != null)
+            sensorManager.registerListener(this, accelerormeterSensor, SensorManager.SENSOR_DELAY_GAME);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(sensorManager!=null)
+            sensorManager.unregisterListener(this);
+    }
+
 
 
     @Override
@@ -290,5 +323,51 @@ public class GpsActivity extends Activity implements LocationListener, TextToSpe
         }
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if(event.sensor.getType()==Sensor.TYPE_ACCELEROMETER){
+            long currentTime = System.currentTimeMillis();
+            long gabOfTime = (currentTime - lastTime);
+            if(gabOfTime >100){
+                lastTime = currentTime;
+                x=event.values[SensorManager.DATA_X];
+                y=event.values[SensorManager.DATA_Y];
+                z=event.values[SensorManager.DATA_Z];
 
+                speed = Math.abs(x + y + z - lastX - lastY - lastZ) / gabOfTime * 10000;
+
+                if(speed > SHAKE_THRESHOLD){
+                    Toast.makeText(this, "흔들림 감지!", Toast.LENGTH_SHORT).show();
+                    if(!init){
+                        Toast.makeText(this, "아직 초기화 되지 않음", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    String msg = textView3.getText().toString().trim();
+
+                    if(msg. equals("")){
+                        Toast.makeText(this, "내용입력해라라", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    Locale loc = Locale.KOREA;
+                    int available = tts.isLanguageAvailable(loc);
+                    if(available<0){
+                        Toast.makeText(this, "지정되지 않은 언어", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    tts.setLanguage(loc);
+                    tts.setPitch(1);
+                    tts.setSpeechRate(1);
+                    tts.speak(msg, TextToSpeech.QUEUE_FLUSH, null);
+                }
+                lastX = event.values[DATA_X];
+                lastY = event.values[DATA_Y];
+                lastZ = event.values[DATA_Z];
+
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    }
 }
