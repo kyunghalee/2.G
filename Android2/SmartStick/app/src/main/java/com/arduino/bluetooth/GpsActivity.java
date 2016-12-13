@@ -41,7 +41,7 @@ import java.util.Locale;
 /**
  * Created by samsung on 2016-11-16.
  */
-public class GpsActivity extends Activity implements LocationListener, View.OnClickListener{
+public class GpsActivity extends Activity implements LocationListener, TextToSpeech.OnInitListener, View.OnClickListener {
 
     TextView textView3;
 
@@ -55,7 +55,9 @@ public class GpsActivity extends Activity implements LocationListener, View.OnCl
     // Button bSelect;
     TextView tv;   // 결과창
 
-
+    Button button;
+    TextToSpeech tts;
+    boolean init;
 
     GoogleMap googleMap;
     MapFragment fragment;
@@ -78,6 +80,10 @@ public class GpsActivity extends Activity implements LocationListener, View.OnCl
         textView3 = (TextView)findViewById(R.id.textView3);
         tv      = (TextView)findViewById(R.id.textView4);
 
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(this);
+        init = false;
+        tts = new TextToSpeech(this, this);
 
 
         helper = new DBManager(
@@ -237,6 +243,51 @@ public class GpsActivity extends Activity implements LocationListener, View.OnCl
     @Override
     public void onProviderDisabled(String provider) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(!init){
+            Toast.makeText(this, "아직 초기화 되지 않음", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String msg = textView3.getText().toString().trim();
+
+        if(msg. equals("")){
+            Toast.makeText(this, "내용입력해라라", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Locale loc = Locale.KOREA;
+        int available = tts.isLanguageAvailable(loc);
+        if(available<0){
+            Toast.makeText(this, "지정되지 않은 언어", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        tts.setLanguage(loc);
+        tts.setPitch(1);
+        tts.setSpeechRate(1);
+        tts.speak(msg, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    @Override
+    public void onInit(int status) {
+        init = (status == TextToSpeech.SUCCESS);
+        String msg = null;
+        if(init){
+            msg = "엔진 초기화";
+        }else {
+            msg = "엔진 초기화에 실패";
+        }
+//        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(tts!=null){
+            tts.stop();
+            tts.shutdown();
+        }
     }
 
 
