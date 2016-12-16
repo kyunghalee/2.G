@@ -1,6 +1,7 @@
 
 long previousMillis = 0;
 const long INTERVAL_SEC = 1000;
+float tem;
 
 int val = 0;
 //int teram = 0;
