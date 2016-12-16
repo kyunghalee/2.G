@@ -2,7 +2,9 @@
 long previousMillis = 0;
 const long INTERVAL_SEC = 1000;
 
-int val = 0; //led 버튼상태 저장
+int val = 0;
+int teram = 0;
+
 
 
 // 초음파 센서 핀 설정
@@ -60,6 +62,7 @@ void setup()
   pinMode(vibePin4, OUTPUT );
   pinMode(vibePin5, OUTPUT );
   pinMode(vibePin6, OUTPUT );
+  
   // 초음파 핀모드
   pinMode(sonicTriggerPin1, OUTPUT); // 센서 Trig 핀
   pinMode(sonicEchoPin1, INPUT); // 센서 Echo 핀
