@@ -5,7 +5,7 @@ float tem;
 
 int val = 0;
 //int teram = 0;
-
+int i=0;
 
 
 // 초음파 센서 핀 설정
@@ -96,7 +96,7 @@ void loop()
   // 블루투스 통신 수신값
   while (Serial1.available()) {
     data += String((char)Serial1.read());
-    delay(1);
+    delay(1000);
   }
 
   // 거리 설정
