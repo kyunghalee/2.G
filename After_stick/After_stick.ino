@@ -3,7 +3,7 @@ long previousMillis = 0;
 const long INTERVAL_SEC = 1000;
 
 int val = 0;
-int teram = 0;
+//int teram = 0;
 
 
 
@@ -169,6 +169,9 @@ void loop()
       Serial.println(cm);
       digitalWrite(vibePin3, HIGH);
     }
+
+
+    
     delay(50); // 0.3초 대기 후 다시 측정
     cm = calcurateDistance(sonicTriggerPin4, sonicEchoPin4);
     if (cm > 10 && cm < outLimitDistance) {
