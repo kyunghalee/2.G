@@ -96,7 +96,7 @@ void loop()
   // 블루투스 통신 수신값
   while (Serial1.available()) {
     data += String((char)Serial1.read());
-    delay(1000);
+    delay(1);
   }
 
   // 거리 설정
@@ -124,7 +124,7 @@ void loop()
     digitalWrite(led,HIGH);
     delay(1000);
     digitalWrite(led, LOW);
-    delay(1000);
+    delay(10000);
     }
      Serial.println("sw");
     Serial1.println("sw;");
